@@ -3,6 +3,7 @@ package com.example.gonzalez.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.onradar.sdk.Radar;
 import com.xendit.Models.Card;
 import com.xendit.Models.Token;
 import com.xendit.Models.XenditError;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Radar.initialize(this);
 
         Xendit xendit = new Xendit(getApplicationContext(), "xnd_public_development_O4iFfuQhgLOsl8M9eeEYGzeWYNH3otV5w3Dh/BFj/mHW+72nCQR/");
         System.out.println("Xendit Class: " + xendit.getClass().toString());
